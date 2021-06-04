@@ -1,5 +1,3 @@
-
-
 let units = 'imperial'
 let APIkey = 'c6a70bcc9254815d5e33ea1ff78f8c5b'
 let searchMethod = 'zip'
