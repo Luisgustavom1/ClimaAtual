@@ -21,6 +21,16 @@ function searchWeather(searchterm){
 
 function init(resultFromServer){
     console.log(resultFromServer)
+    document.querySelector('.cidade').innerHTML = resultFromServer.name;
+
+    document.querySelector('.temperatura').innerHTML = `Temperatura: ${(( resultFromServer.main.temp - 32) * 5/9).toFixed(2)}°C` 
+
+    document.querySelector('.condiçãoDoTempo').innerHTML = resultFromServer.weather[0].description
+
+    document.querySelector('.nuvens').innerHTML = `Nuvens: ${ resultFromServer.clouds.all}%`
+
+    document.querySelector('.umidade').innerHTML =
+    `Umidade: ${ resultFromServer.main.humidity}%`
 }
 
 document.querySelector('#btn').addEventListener('click', () => {
