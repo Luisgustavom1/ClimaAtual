@@ -18,14 +18,13 @@ main{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(128, 128, 128, 0.26);
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 5px black;
     border-radius: .5rem;
     width: 350px;
     height: 350px; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
 }
 p > img{
    width: 63px;
@@ -33,9 +32,67 @@ p > img{
 }
 
 .inputebtn{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+}
+#inputCity{
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    width: 10rem;
+    height: 1.2rem;
+    padding-left: .5rem;
+}
+#btn{
+    border: none;
+    padding: .1rem .8rem;
+    border-radius: .3rem;
+    background-color: #048ABF;
+    font-size: .9rem;
+    margin-left: .5rem;
+}
+#btn:hover{
+    background-color: #0678a5;
 }
 .data{
-    
+    display: flex;
+    flex-direction: column;
+}
+hr{
+    background-color: white;
+    width: 80%;
+    align-self: center;
+}
+.cidade{
+    text-align: center;
+    padding: .8rem 0;
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.temperatura{
+    margin-top: 1.6rem;
+    align-self: center;
+    font-size: 1.3rem;
+    color: white;
+}
+.condiçãoDoTempo{
+    margin-top: .3rem;
+    font-size: 1.3rem;
+    align-self: center;
+    color: white;
+}
+.icon{
+    align-self: center;
+    margin-top: .3rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.nuvens, .umidade{
+    margin-left: 1rem;
+    margin-bottom: .4rem;
+    color: white;
 }
