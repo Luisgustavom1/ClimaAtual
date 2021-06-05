@@ -20,17 +20,56 @@ function searchWeather(searchterm){
 }
 
 function init(resultFromServer){
-    console.log(resultFromServer)
-    document.querySelector('.cidade').innerHTML = resultFromServer.name;
+        console.log(resultFromServer)
+        let city = resultFromServer.name
+        document.querySelector('.cidade').innerHTML = city;
+    
+        let temperature = (( resultFromServer.main.temp - 32) * 5/9).toFixed(2);
+        document.querySelector('.temperatura').innerHTML = `Temperatura: ${ temperature}°C` 
+    
+        let timeCondition = resultFromServer.weather[0].description;
+        document.querySelector('.condiçãoDoTempo').innerHTML = timeCondition
+    
+        let clouds = resultFromServer.clouds.all;
+        document.querySelector('.nuvens').innerHTML = `Nuvens: ${ clouds}%`
+    
+        let humidity = resultFromServer.main.humidity
+        document.querySelector('.umidade').innerHTML =
+        `Umidade: ${ humidity}%`
 
-    document.querySelector('.temperatura').innerHTML = `Temperatura: ${(( resultFromServer.main.temp - 32) * 5/9).toFixed(2)}°C` 
+        let icon = resultFromServer.weather[0].icon
+        document.querySelector('#img').setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`)
+        
+        conditionalBackground(icon)
+    }
 
-    document.querySelector('.condiçãoDoTempo').innerHTML = resultFromServer.weather[0].description
-
-    document.querySelector('.nuvens').innerHTML = `Nuvens: ${ resultFromServer.clouds.all}%`
-
-    document.querySelector('.umidade').innerHTML =
-    `Umidade: ${ resultFromServer.main.humidity}%`
+function conditionalBackground(icon){
+    switch (icon){
+        case '01d':
+            document.body.style.backgroundImage = "url('Foto01d.jpg')"
+        break;
+        case '01n':
+            document.body.style.backgroundImage = "url('foto01n.jpg')"
+        break;
+        case '02d' || '03d' || '04d':
+            document.body.style.backgroundImage = "url('foto02d.jpg')"
+        break;
+        case '02n' || '03n' || '04n':
+            document.body.style.backgroundImage = "url('foto02n.jpg')"
+        break;
+        case '05d' || '05n':
+            document.body.style.backgroundImage = "url('foto04dn.webp')"
+        break;
+        case '10d' || '10n':
+            document.body.style.backgroundImage = "url('foto10dn.jpg')"
+        break;
+        case '11d' || '11n':
+            document.body.style.backgroundImage = "url('foto11dn.jpg')"
+        break;
+        case '13d' || '13n':
+            document.body.style.backgroundImage = "url('foto13dn.jpg')"
+        break;
+    } 
 }
 
 document.querySelector('#btn').addEventListener('click', () => {
