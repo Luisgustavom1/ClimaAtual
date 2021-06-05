@@ -18,22 +18,13 @@ main{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-<<<<<<< Updated upstream
-    background-color: rgba(128, 128, 128, 0.26);
-=======
     background-color: rgba(0, 0, 0, 0.25);
     box-shadow: 1px 1px 5px black;
->>>>>>> Stashed changes
     border-radius: .5rem;
     width: 350px;
     height: 350px; 
     display: flex;
     flex-direction: column;
-<<<<<<< Updated upstream
-    align-items: center;
-    justify-content: start;
-=======
->>>>>>> Stashed changes
 }
 p > img{
    width: 63px;
@@ -41,13 +32,6 @@ p > img{
 }
 
 .inputebtn{
-<<<<<<< Updated upstream
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.data{
-    
-=======
     margin: 2rem;
     display: flex;
     align-items: center;
@@ -111,5 +95,4 @@ hr{
     margin-left: 1rem;
     margin-bottom: .4rem;
     color: white;
->>>>>>> Stashed changes
 }
