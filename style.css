@@ -96,3 +96,9 @@ hr{
     margin-bottom: .4rem;
     color: white;
 }
+
+@media (max-width: 370px){
+    main{
+        width: 300px;
+    }
+}
