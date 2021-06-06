@@ -2,6 +2,8 @@ let units = 'imperial'
 let APIkey = 'c6a70bcc9254815d5e33ea1ff78f8c5b'
 let searchMethod = 'zip'
 
+document.querySelector('#inputCity').value = localStorage.City
+
 function getSearchMethod(searchterm){
     if(searchterm.length === 5 && parseInt(searchterm) + '' === searchterm){
         searchMethod = 'zip'
@@ -43,7 +45,14 @@ function init(resultFromServer){
         document.querySelector('#img').setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`)
     
         conditionalBackground(icon)
+        saveNoStorage(city)
+
     }
+}
+
+function saveNoStorage(city){
+    let savedCity = localStorage.getItem('City')
+    localStorage.setItem('City', city);
 }
 
 function conditionalBackground(icon){
